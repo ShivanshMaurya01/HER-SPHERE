@@ -1,28 +1,99 @@
+/* General Page Style */
 body{
-font-family: Arial;
-background:#f4f4f4;
-text-align:center;
-margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    margin:0;
+    background:#f4f6f9;
+    color:#333;
 }
 
+/* Header */
 header{
-background:#ff4da6;
-color:white;
-padding:20px;
+    background:linear-gradient(135deg,#ff4da6,#ff7ac3);
+    color:white;
+    text-align:center;
+    padding:40px 20px;
 }
 
+header h1{
+    margin:0;
+    font-size:40px;
+}
+
+header p{
+    font-size:18px;
+}
+
+/* Navigation Bar */
 nav{
-background:#333;
-padding:10px;
+    background:#222;
+    text-align:center;
+    padding:12px;
 }
 
 nav a{
-color:white;
-margin:15px;
-text-decoration:none;
-font-size:18px;
+    color:white;
+    margin:15px;
+    text-decoration:none;
+    font-size:18px;
+    font-weight:bold;
+    transition:0.3s;
 }
 
+nav a:hover{
+    color:#ff7ac3;
+}
+
+/* Content Sections */
 section{
-padding:30px;
+    max-width:900px;
+    margin:auto;
+    padding:40px 20px;
+}
+
+section h2{
+    color:#ff4da6;
+}
+
+/* List Styling */
+ul{
+    line-height:1.8;
+    font-size:17px;
+}
+
+/* Buttons */
+button{
+    background:#ff4da6;
+    color:white;
+    border:none;
+    padding:12px 20px;
+    font-size:16px;
+    cursor:pointer;
+    border-radius:5px;
+}
+
+button:hover{
+    background:#e6398f;
+}
+
+/* Footer */
+footer{
+    background:#222;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:40px;
+}
+
+/* Mobile Responsive */
+@media (max-width:600px){
+
+header h1{
+font-size:28px;
+}
+
+nav a{
+display:block;
+margin:10px 0;
+}
+
 }
