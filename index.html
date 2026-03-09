@@ -1,55 +1,47 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Her-Sphere</title>
-<link rel="stylesheet" href="style.css">
-</head>
+<section id="ai-helper">
 
-<body>
+<h2>Her-Sphere AI Helper</h2>
+<p>Ask questions about safety, learning, or earning. If the answer is not available, you can submit a help request.</p>
 
-<header>
-<h1>Her-Sphere</h1>
-<p>A global platform for women's safety, learning, and earning.</p>
-</header>
+<div class="chatbox">
+<div id="chat-output"></div>
 
-<nav>
-<a href="index.html">Home</a>
-<a href="help.html">Ask for Help</a>
-<a href="map.html">Safety Map</a>
-<a href="learn.html">Learn</a>
-<a href="earn.html">Earn</a>
-</nav>
-
-<section>
-<h2>Welcome to Her-Sphere</h2>
-
-<p>
-Her-Sphere is a global community designed to support women and girls around the world.
-Our mission is to provide a safe space where women can ask for help, share knowledge,
-learn valuable skills, and find opportunities to grow.
-</p>
+<input type="text" id="user-input" placeholder="Ask a question...">
+<button onclick="sendMessage()">Send</button>
+</div>
 
 </section>
 
-<section>
-<h2>What You Can Do Here</h2>
+<script>
 
-<ul>
-<li><b>Ask for Help</b> – Get advice or support from the community.</li>
-<li><b>Safety Map</b> – View locations where safety concerns have been reported.</li>
-<li><b>Learn Skills</b> – Discover resources for education and digital skills.</li>
-<li><b>Earn Opportunities</b> – Find ideas and opportunities to earn online.</li>
-</ul>
+function sendMessage(){
 
-</section>
+let input = document.getElementById("user-input").value;
+let output = document.getElementById("chat-output");
 
-<footer>
+let reply = "";
 
-<p>© 2026 Her-Sphere | Building a safer and stronger future for women.</p>
+if(input.toLowerCase().includes("safety")){
+reply = "If you feel unsafe, move to a public place and contact trusted people immediately.";
+}
 
-</footer>
+else if(input.toLowerCase().includes("job") || input.toLowerCase().includes("earn")){
+reply = "You can learn freelancing skills like design, writing, or coding to earn online.";
+}
 
-</body>
-</html>
+else if(input.toLowerCase().includes("study") || input.toLowerCase().includes("learn")){
+reply = "Visit the Learn section on Her-Sphere for useful resources.";
+}
+
+else{
+reply = "I’m not sure about that yet. Please submit your question on the Help page so the community can assist you.";
+}
+
+output.innerHTML += "<p><b>You:</b> " + input + "</p>";
+output.innerHTML += "<p><b>AI:</b> " + reply + "</p>";
+
+document.getElementById("user-input").value="";
+
+}
+
+</script>
